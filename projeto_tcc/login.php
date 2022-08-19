@@ -1,49 +1,98 @@
-<?php
-session_start();
-?>
- 
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>Sistema de Cadastro</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+
     
-<head>
-</head>
- 
-<body>
-    <section class="hero is-success is-fullheight">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="column is-4 is-offset-4">
-                    <h3 class="title has-text-grey">Sistema de Login</h3>
-                    <?php
-                    if(isset($_SESSION['nao_autenticado'])):
-                    ?>
-                    <div class="notification is-danger">
-                      <p>ERRO: Usuário ou senha inválidos.</p>
-                    </div>
-                    <?php
-                    endif;
-                    unset($_SESSION['nao_autenticado']);
-                    ?>
-                    <div class="box">
-                        <form action="recebeLogin.php" method="POST">
-                            <div class="field">
-                                <div class="control">
-                                    <input name="usuario" name="text" class="input is-large" placeholder="Seu usuário" autofocus="">
-                                </div>
-                            </div>
- 
-                            <div class="field">
-                                <div class="control">
-                                    <input name="senha" class="input is-large" type="password" placeholder="Sua senha">
-                                </div>
-                            </div>
-                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Entrar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+
+    
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin w-100 m-auto">
+  <form action="recebeLogin.php" method="POST">
+    <div class="field">
+        <div class="control">
+            <input name="usuario" name="text" class="input is-large" placeholder="Seu usuário" autofocus="">
         </div>
-    </section>
-</body>
- 
+    </div>
+
+    <div class="field">
+        <div class="control">
+            <input name="senha" class="input is-large" type="password" placeholder="Sua senha">
+        </div>
+    </div>
+    <button type="submit" class="button is-block is-link is-large is-fullwidth">Entrar</button>
+</form>
+</main>
+
+
+    
+  </body>
 </html>
